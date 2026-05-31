@@ -1,15 +1,22 @@
 {
   "cli": {
-    "version": ">= 5.0.0"
+    "version": ">= 5.0.0",
+    "appVersionSource": "local"
   },
   "build": {
     "preview": {
       "distribution": "internal",
+      "env": {
+        "EAS_NO_VCS": "1"
+      },
       "android": {
         "buildType": "apk"
       }
     },
     "production": {
+      "env": {
+        "EAS_NO_VCS": "1"
+      },
       "android": {
         "buildType": "apk",
         "gradleCommand": ":app:assembleRelease"
